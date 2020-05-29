@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>씨알유디 연습</title>
+        <style>
+            @font-face { font-family: 'GmarketSansMedium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); font-weight: normal; font-style: normal; }
+            .body{
+                background-color: lightskyblue;
+            }
+            .crud{
+                margin:40px;
+            }
+            h1{
+                font-family: GmarketSansMedium;
+            }
+            span{
+                text-decoration: underline;
+                color:indigo;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    {% extends 'base.html' %}
+
+    {% block contents %}
+    <body class="body">
+        <div class="crud">
+            <h1>CRUD 방식</h1>
+            <a href="{% url 'home' %}"><span>Function Based CRUD</span></a><br>
+        </div>
+    </body>
+    {% endblock %}
+</html>

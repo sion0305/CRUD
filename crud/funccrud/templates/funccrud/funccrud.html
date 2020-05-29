@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>씨알유디 연습</title>
+        <style>
+             @font-face { font-family: 'Cafe24Danjunghae'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff') format('woff'); font-weight: normal; font-style: normal; }
+            
+            h2{
+                font-family: cafe24Danjunghae;
+                color:darkslateblue;
+            }
+            .date{
+                font-style: italic;
+                background-color: khaki;
+            }
+            .blog{
+                margin: 30px;
+            }
+            .delete{
+                color:red;
+            }
+        </style>
+    </head>
+    {% extends 'base.html' %}
+
+    {% block contents %}
+    <body>
+    
+        <!--<a href="{% url 'newblog' %}">글쓰기</a>-->
+        <div class = "blog">
+            {% for blog in blogs %}
+            <h2>{{blog.title}}</h2>
+            <span class = "date">{{blog.pub_date}}</span>
+            <p>{{blog.body}}</p>
+            <a href = "{% url 'update' blog.id %}">수정 </a>
+            <a href = "{% url 'delete' blog.id %}" > <span class = "delete">삭제</span></a>
+            <hr>
+        {% endfor %}
+        </div>
+        
+    </body>
+    {% endblock %}
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>씨알유디 연습</title>
+        <style>
+             @font-face { font-family: 'Cafe24Danjunghae'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff') format('woff'); font-weight: normal; font-style: normal; }
+            
+            .body{
+                margin: 30px;
+                padding: 20px;
+                border: 1px black solid;
+                background-color: darkseagreen;
+                width : 600px;
+            }
+            h1{
+                font-family: Cafe24Danjunghae;
+                color:darkgreen;
+                
+            }
+        </style>
+    </head>
+    {% extends 'base.html' %}
+
+    {% block contents %}
+    <body>
+        <div class="body">
+            <h1>글쓰기</h1>
+            <br>
+            <form method="POST">
+                {% csrf_token %}
+                <table>
+                    {{form.as_table}}
+                </table><!--입력받을수 있는 공간-->
+                <br>
+                <input type="submit" value="제출하기">
+            </form>
+        </div>
+    </body>
+    {% endblock %}
+</html>
